@@ -2,7 +2,86 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="077c15b5-5a53-4750-8c3e-2f4a12972969" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/apps/boleta/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/boleta/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/boleta/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/boleta/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/boleta/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/boleta/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/boleta/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/categoria/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/categoria/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/categoria/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/categoria/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/categoria/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/categoria/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/categoria/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/clientes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/clientes/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/clientes/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/clientes/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/clientes/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/clientes/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/clientes/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/detalleordenpedido/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/detalleordenpedido/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/detalleordenpedido/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/detalleordenpedido/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/detalleordenpedido/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/detalleordenpedido/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/detalleordenpedido/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/distrito/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/distrito/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/distrito/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/distrito/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/distrito/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/distrito/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/distrito/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/empleado/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/empleado/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/empleado/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/empleado/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/empleado/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/empleado/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/empleado/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ordenpedido/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ordenpedido/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ordenpedido/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ordenpedido/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ordenpedido/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ordenpedido/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/ordenpedido/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/presentacion/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/presentacion/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/presentacion/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/presentacion/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/presentacion/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/presentacion/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/presentacion/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/producto/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/producto/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/producto/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/producto/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/producto/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/producto/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/producto/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/proveedor/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/proveedor/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/proveedor/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/proveedor/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/proveedor/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/proveedor/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/proveedor/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/usuarios/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/usuarios/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/usuarios/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/usuarios/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/usuarios/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/usuarios/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/usuarios/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacia/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/farmacia/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacia/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/farmacia/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,12 +89,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PC7GRMG2jIgs8xIMNIXiASC9dL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -75,6 +162,10 @@
       <option name="presentableId" value="Default" />
       <updated>1565366130081</updated>
       <workItem from="1565366181102" duration="1452000" />
+      <workItem from="1565368628702" duration="2397000" />
+      <workItem from="1565553008137" duration="1171000" />
+      <workItem from="1565563373621" duration="4968000" />
+      <workItem from="1565577637843" duration="2067000" />
     </task>
     <servers />
   </component>
@@ -86,7 +177,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
