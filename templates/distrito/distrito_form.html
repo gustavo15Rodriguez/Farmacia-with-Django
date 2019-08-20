@@ -1,0 +1,12 @@
+{% extends "base/farmacia.html" %}
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        <br>
+        <h3>Crear distritos</h3>
+        <br>
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'listar_distritos' %}" class="btn btn-success">Listar distritos</a>
+    </form>
+{% endblock content %}

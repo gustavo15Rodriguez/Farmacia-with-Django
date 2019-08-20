@@ -1,5 +1,6 @@
 from django.db import models
 from apps.distrito.models import Distrito
+from django.utils.translation import ugettext as _
 
 class Clientes(models.Model):
     cod_cliente = models.IntegerField(primary_key=True)
@@ -14,3 +15,8 @@ class Clientes(models.Model):
 
     def __str__(self):
         return '{}'.format(self.nom_cliente)
+
+    class Meta:
+        permissions = {
+            ('cliente_permission', _('Usuario_cliente')),
+        }

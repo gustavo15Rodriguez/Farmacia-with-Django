@@ -1,5 +1,6 @@
 from django.db import models
 from apps.distrito.models import Distrito
+from django.utils.translation import ugettext as _
 
 class Proveedor(models.Model):
     cod_proveedor = models.CharField(primary_key=True, max_length=6)
@@ -11,3 +12,8 @@ class Proveedor(models.Model):
 
     def __str__(self):
         return '{}'.format(self.nom_proveedor)
+
+    class Meta:
+        permissions = {
+            ('proveedor_permission', _('Usuario proveedor')),
+        }

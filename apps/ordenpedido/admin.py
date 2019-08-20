@@ -1,3 +1,4 @@
 from django.contrib import admin
+from apps.ordenpedido.models import OrdenPedido
 
-# Register your models here.
+admin.site.register(OrdenPedido)

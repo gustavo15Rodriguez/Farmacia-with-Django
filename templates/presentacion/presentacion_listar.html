@@ -1,0 +1,45 @@
+{% extends "base/farmacia.html" %}
+
+{% block results %}
+    <div class="container">
+        <br>
+        <h3>Listar presentaciones</h3>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre de la presentacion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for presentacion in object_list %}
+                        <tr class="table-light">
+                            <th scope="row">{{ presentacion.cod_presentacion }}</th>
+                            <td>{{ presentacion.nom_presentacion }}</td>
+                            <td>
+                                <a href="{% url 'editar_ordenes' presentacion.cod_presentacion %}" class="btn btn-success">Editar</a>
+                                <a href="{% url 'eliminar_ordenes' presentacion.cod_presentacion %}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <br>
+                    <div class="container">
+                        <h3>Aun no hay presentaciones creadas</h3>
+                        <a href="{% url 'crear_presentaciones' %}" class="btn btn-success">Crear presentaciones</a>
+                    </div>
+                    <br>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    {% if object_list %}
+        <div class="container">
+            <a href="{% url 'reporte_presentacion_pdf' %}" class="btn btn-primary">Generar reporte → </a>
+        </div>
+    {% endif %}
+    <br>
+{% endblock results %}

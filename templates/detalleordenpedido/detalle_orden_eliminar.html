@@ -1,0 +1,13 @@
+{% extends "base/farmacia.html" %}
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        <br>
+        <h3>Eliminar detalles de ordenes de productos</h3>
+        <br>
+        <p>Desea eliminar realmente el detalle con numero {{ object.pk }}?</p>
+        <button type="submit" class="btn btn-danger">Si, Eliminar</button>
+        <a href="{% url 'listar_detalles' %}" class="btn btn-success">Cancelar</a>
+        <br>
+    </form>
+{% endblock content %}

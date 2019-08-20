@@ -1,10 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base/farmacia.html" %}
+
+{% block results %}
+    <div class="container-fluid">
+        <br>
+        <h3>Listar clientes</h3>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre del cliente</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">RUC</th>
+                    <th scope="col">Celular</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for cliente in object_list %}
+                        <tr class="table-light">
+                            <th scope="row">{{ cliente.cod_cliente }}</th>
+                            <td>{{ cliente.nom_cliente }}</td>
+                            <td>{{ cliente.dir_cliente }}</td>
+                            <td>{{ cliente.sexo }}</td>
+                            <td>{{ cliente.dni }}</td>
+                            <td>{{ cliente.ruc }}</td>
+                            <td>{{ cliente.celular }}</td>
+                            <td>
+                                <a href="{% url 'editar_clientes' cliente.cod_cliente %}" class="btn btn-success">Editar</a>
+                                <a href="{% url 'eliminar_clientes' cliente.cod_cliente %}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <br>
+                    <div class="container">
+                        <h3>Aun no hay clientes registrados</h3>
+                        <a href="{% url 'crear_clientes' %}" class="btn btn-success">Crear clientes</a>
+                    </div>
+                    <br>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    {% if object_list %}
+        <div class="container">
+            <a href="{% url 'reporte_clientes_pdf' %}" class="btn btn-primary">Generar reporte → </a>
+        </div>
+        <br>
+    {% endif %}
+{% endblock results %}

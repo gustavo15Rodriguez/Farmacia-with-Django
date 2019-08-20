@@ -1,0 +1,49 @@
+{% extends "base/farmacia.html" %}
+
+{% block results %}
+    <div class="container">
+        <br>
+        <h3>Listar detalles de ordenes</h3>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Codigo producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio venta</th>
+                    <th scope="col">Importe</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for detalle in object_list %}
+                        <tr class="table-light">
+                            <th scope="row">{{ detalle.cod_producto }}</th>
+                            <td>{{ detalle.cantidad }}</td>
+                            <td>{{ detalle.precio_venta }}</td>
+                            <td>{{ detalle.importe }}</td>
+                            <td>
+                                <a href="{% url 'editar_detalles' detalle.cod_producto %}" class="btn btn-success">Editar</a>
+                                <a href="{% url 'eliminar_detalles' detalle.cod_producto %}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <br>
+                    <div class="container">
+                        <h3>Aun no hay detalles registrados</h3>
+                        <a href="{% url 'crear_detalles' %}" class="btn btn-success">Crear detalles</a>
+                    </div>
+                    <br>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    {% if object_list %}
+        <div class="container">
+            <a href="{% url 'reporte_detalles_pdf' %}" class="btn btn-primary">Generar reporte → </a>
+        </div>
+        <br>
+    {% endif %}
+{% endblock results %}

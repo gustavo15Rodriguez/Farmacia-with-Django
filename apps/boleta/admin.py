@@ -1,3 +1,4 @@
 from django.contrib import admin
+from apps.boleta.models import Boleta
 
-# Register your models here.
+admin.site.register(Boleta)

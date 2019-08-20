@@ -35,41 +35,27 @@
 	
 	<div class="container-login100" style="background-image: url({%  static 'registro/images/bg-01.jpg' %});">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-			<form class="login100-form validate-form">
+			<form class="login100-form validate-form" method="post">{% csrf_token %}
 				
 				<span class="login100-form-title p-b-37">
 					Registro usuarios
 				</span>
 
-				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter your first name">
-					<input class="input100" type="text" name="firstname" placeholder="firstname">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter your last name">
-					<input class="input100" type="text" name="lastname" placeholder="lastname">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter your E-mail">
-					<input class="input100" type="email" name="email" placeholder="E-mail">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">
-					<input class="input100" type="text" name="username" placeholder="username or email">
-					<span class="focus-input100"></span>
-				</div>
-
-				<div class="wrap-input100 validate-input m-b-25" data-validate = "Enter password">
-					<input class="input100" type="password" name="pass" placeholder="password">
-					<span class="focus-input100"></span>
-				</div>
+				{% for field in form %}
+                    <div class="wrap-input100 validate-input m-b-25" >
+                        <span class="focus-input100"></span>
+                        {{ field }}
+                    </div>
+                {% endfor %}
 
 				<div class="container-login100-form-btn">
 					<button class="login100-form-btn" type="submit">
 						Registrarme
 					</button>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="{% url 'login' %}" class="login100-form-btn">Cancelar</a>
 				</div>
 
 			</form>

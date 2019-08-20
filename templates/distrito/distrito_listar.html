@@ -1,0 +1,45 @@
+{% extends "base/farmacia.html" %}
+
+{% block results %}
+   <div class="container">
+        <br>
+        <h3>Listar distritos</h3>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Codigo distrito</th>
+                    <th scope="col">Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for distrito in object_list %}
+                        <tr class="table-light">
+                            <th scope="row">{{ distrito.cod_distrito }}</th>
+                            <td>{{ distrito.nom_distrito }}</td>
+                            <td>
+                                <a href="{% url 'editar_distritos' distrito.cod_distrito %}" class="btn btn-success">Editar</a>
+                                <a href="{% url 'eliminar_distritos' distrito.cod_distrito %}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <br>
+                    <div class="container">
+                        <h3>Aun no hay distritos registrados</h3>
+                        <a href="{% url 'crear_distritos' %}" class="btn btn-success">Crear distritos</a>
+                    </div>
+                    <br>
+                {% endif %}
+            </tbody>
+        </table>
+   </div>
+    {% if object_list %}
+        <div class="container">
+            <a href="{% url 'reporte_distrito_pdf' %}" class="btn btn-primary">Generar reporte → </a>
+        </div>
+        <br>
+    {% endif %}
+{% endblock results %}

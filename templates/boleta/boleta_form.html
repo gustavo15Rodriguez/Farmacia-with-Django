@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base/farmacia.html" %}
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        <br>
+        <h3>Crear boletas</h3>
+        <br>
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'listar_boletas' %}" class="btn btn-success">Listar boletas</a>
+    </form>
+{% endblock content %}

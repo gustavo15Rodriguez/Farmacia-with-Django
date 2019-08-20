@@ -1,0 +1,13 @@
+{% extends "base/farmacia.html" %}
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        <br>
+        <h3>Eliminar empleados</h3>
+        <br>
+        <p>Desea eliminar realmente al empleado {{ object.nom_empleado }}?</p>
+        <button type="submit" class="btn btn-danger">Si, Eliminar</button>
+        <a href="{% url 'listar_empleados' %}" class="btn btn-success">Cancelar</a>
+        <br>
+    </form>
+{% endblock content %}

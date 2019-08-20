@@ -1,0 +1,53 @@
+{% extends "base/farmacia.html" %}
+
+{% block results %}
+    <div class="container-fluid">
+        <br>
+        <h3>Listar proveedores</h3>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre del proveedor</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Distrito</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for proveedor in object_list %}
+                        <tr class="table-light">
+                            <th scope="row">{{ proveedor.cod_proveedor }}</th>
+                            <td>{{ proveedor.nom_proveedor }}</td>
+                            <td>{{ proveedor.dir_proveedor }}</td>
+                            <td>{{ proveedor.telefono }}</td>
+                            <td>{{ proveedor.celular }}</td>
+                            <td>{{ proveedor.id_distrito }}</td>
+                            <td>
+                                <a href="{% url 'editar_proveedores' proveedor.cod_proveedor %}" class="btn btn-success">Editar</a>
+                                <a href="{% url 'eliminar_proveedores' proveedor.cod_proveedor %}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <br>
+                    <div class="container">
+                        <h3>Aun no hay proveedores registrados.</h3>
+                        <a href="{% url 'crear_proveedores' %}" class="btn btn-success">Crear proveedores</a>
+                    </div>
+                    <br>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    {% if object_list %}
+        <div class="container">
+            <a href="{% url 'reporte_proveedor_pdf' %}" class="btn btn-primary">Generar reporte → </a>
+        </div>
+        <br>
+    {% endif %}
+{% endblock results %}

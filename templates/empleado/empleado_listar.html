@@ -1,0 +1,53 @@
+{% extends "base/farmacia.html" %}
+
+{% block results %}
+    <div class="container-fluid">
+        <br>
+        <h3>Listar empleados</h3>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre del empleado</th>
+                    <th scope="col">Direccion</th>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Celular</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for empleado in object_list %}
+                        <tr class="table-light">
+                            <th scope="row">{{ empleado.cod_empleado }}</th>
+                            <td>{{ empleado.nom_empleado }}</td>
+                            <td>{{ empleado.dir_empleado }}</td>
+                            <td>{{ empleado.cargo }}</td>
+                            <td>{{ empleado.edad }}</td>
+                            <td>{{ empleado.celular }}</td>
+                            <td>
+                                <a href="{% url 'editar_empleados' empleado.cod_empleado %}" class="btn btn-success">Editar</a>
+                                <a href="{% url 'eliminar_empleados' empleado.cod_empleado %}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <br>
+                    <div class="container">
+                        <h3>Aun no hay empleados registrados</h3>
+                        <a href="{% url 'crear_empleados' %}" class="btn btn-success">Crear empleados</a>
+                    </div>
+                    <br>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    {% if object_list %}
+        <div class="container">
+            <a href="{% url 'reporte_empleado_pdf' %}" class="btn btn-primary">Generar reporte → </a>
+        </div>
+        <br>
+    {% endif %}
+{% endblock results %}

@@ -1,0 +1,12 @@
+{% extends "base/farmacia.html" %}
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        <br>
+        <h3>Crear detalles de ordenes de pedidos</h3>
+        <br>
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'listar_detalles' %}" class="btn btn-success">Listar detalles creados</a>
+    </form>
+{% endblock content %}

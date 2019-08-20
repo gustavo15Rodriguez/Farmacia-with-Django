@@ -1,0 +1,55 @@
+{% extends "base/farmacia.html" %}
+
+{% block results %}
+    <div class="container-fluid">
+        <br>
+        <h3>Listar productos</h3>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre del producto</th>
+                    <th scope="col">Precio venta</th>
+                    <th scope="col">Precio Compra</th>
+                    <th scope="col">Fecha de vencimiento</th>
+                    <th scope="col">Proveedor</th>
+                    <th scope="col">Presentacion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for producto in object_list %}
+                        <tr class="table-light">
+                            <th scope="row">{{ producto.cod_producto }}</th>
+                            <td>{{ producto.nom_producto }}</td>
+                            <td>{{ producto.pre_venta }}</td>
+                            <td>{{ producto.pre_compra }}</td>
+                            <td>{{ producto.fecha_vencimiento }}</td>
+                            <td>{{ producto.cod_proveedor }}</td>
+                            <td>{{ producto.cod_presentacion }}</td>
+                            <td>
+                                <a href="{% url 'editar_productos' producto.cod_producto %}" class="btn btn-success">Editar</a>
+                                <a href="{% url 'eliminar_productos' producto.cod_producto %}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <br>
+                    <div class="container">
+                        <h3>Aun no hay productos registrados</h3>
+                        <a href="{% url 'crear_productos' %}" class="btn btn-success">Crear productos</a>
+                    </div>
+                    <br>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    {% if object_list %}
+        <div class="container-fluid">
+            <a href="{% url 'reporte_producto_pdf' %}" class="btn btn-primary">Generar reporte → </a>
+        </div>
+        <br>
+    {% endif %}
+{% endblock results %}

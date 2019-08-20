@@ -1,10 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base/farmacia.html" %}
+
+{% block results %}
+    <div class="container-fluid">
+        <br>
+        <h3>Listar boletas</h3>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Numero de boleta</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Empleado</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Numero de orden</th>
+                    <th scope="col">Subtotal</th>
+                    <th scope="col">Descuento</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if object_list %}
+                    {% for boleta in object_list %}
+                        <tr class="table-light">
+                            <th scope="row">{{ boleta.num_boleta }}</th>
+                            <td>{{ boleta.fecha }}</td>
+                            <td>{{ boleta.codi_empleado }}</td>
+                            <td>{{ boleta.cod_cliente }}</td>
+                            <td>{{ boleta.num_ordenpedido }}</td>
+                            <td>{{ boleta.subtotal }}</td>
+                            <td>{{ boleta.descuento }}</td>
+                            <td>
+                                <a href="{% url 'editar_boletas' boleta.num_boleta %}" class="btn btn-success">Editar</a>
+                                <a href="{% url 'eliminar_boletas' boleta.num_boleta %}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <br>
+                    <div class="container">
+                        <h3>Aun no hay boletas creadas</h3>
+                        <a href="{% url 'crear_boletas' %}" class="btn btn-success">Crear boletas</a>
+                    </div>
+                    <br>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+    {% if object_list %}
+        <div class="container">
+            <a href="{% url 'reporte_boletas_pdf' %}" class="btn btn-primary">Generar reporte → </a>
+        </div>
+        <br>
+    {% endif %}
+{% endblock results %}
